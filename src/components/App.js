@@ -1,18 +1,24 @@
 import React from "react";
 
-import VisibleTodoList from '../containers/VisibleTodoList'
-import AddTodo from '../containers/AddTodo'
-
+import {Route, Routes} from 'react-router-dom'
+import Nav from "../pages/Nav";
+import { ProjectPage } from "../pages/ProjectPage";
+import { TodoPage } from "../pages/TodoPage";
 
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hello redux</h1>
-      <AddTodo/>
-      <VisibleTodoList/>
-    </div>
-  );
+    <>
+    <Nav/>  
+    <Routes>
+      <Route path="/project" element={<ProjectPage/>} ></Route>
+      <Route path="/" element={<TodoPage/>}></Route>
+    </Routes>
+    
+    </>
+    
+  )
+    
 }
 
 export default App;
