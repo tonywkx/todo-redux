@@ -9,7 +9,7 @@ const AddTodo =({ dispatch }) => {
 
     return (
         <div>
-            add todo
+            Add todo
             <form
              onSubmit={
                 e => {
@@ -25,7 +25,30 @@ const AddTodo =({ dispatch }) => {
              }
             >
                 <input type='text' ref={el => (input = el)}/>
-                <button type="submit">AddTodo</button>
+                {/* <input
+                    type="text"
+                    placeholder="Введите заголовок..."
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Введите описание..."
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+                <input
+                    type="file"
+                    multiple={true}
+                    ref={fileInput}
+                    onChange={handleChange}
+                />
+                <input 
+                    type="date" 
+                    value={date} 
+                    onChange={(e) => setDate(e.target.value)}
+                /> */}
+                <button type="submit" className="addtodo-button">AddTodo</button>
             </form>
         </div>
     )

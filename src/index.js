@@ -5,9 +5,12 @@ import {BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index'
+import './style.css'
 /* import { composeWithDevTools } from 'redux-devtools-extension' */
 
 const store = createStore(rootReducer)
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
