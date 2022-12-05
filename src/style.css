@@ -1,33 +1,78 @@
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .nav-container{
-    width: 90%;
-    display: flex;
-    margin: 0 auto;
-    background-color: azure;
-    height: 40px;
-    align-items: center;
-    justify-content: space-between;
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  background-color: azure;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-item{
-    cursor: pointer;
-    text-align: center;
-    background-color: aqua;
-    color: black;
-    border: 1px;
-    border-radius: 4px;
-    text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  background-color: aqua;
+  color: black;
+  border: 1px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .addtodo-button{
-    background-color: blueviolet;
-    cursor: pointer;
-    text-align: center;
-    color: wheat;
-    border: 2px;
-    border-radius: 3px;
+  background-color: blueviolet;
+  margin: 10px;
+  padding: 20px;
+  align-self: center;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  color: wheat;
+  border: 2px;
+  border-radius: 3px;
+}
+
+.addtodo-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.add-input{
+  margin: 15px;
+  padding: 5px;
+}
+
+.todo-app{
+    font-family: sans-serif;
+}
+  
+  /** todo list **/
+.todo-list{
+  margin-top: 1rem;
+  text-align: left;
+  list-style: none;
+}
+  
+  /** todo item **/
+.todo-item {
+  font-family: monospace;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.todo-item__text--completed {
+  text-decoration: line-through;
+  color: lightgray;
+}
+  
+.open-modal{
+  margin: 10px 20px;
+  padding: 20px;
+  font-size: 2rem;
+  background-color: blueviolet;
+  border-radius: 10px;
 }

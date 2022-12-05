@@ -1,9 +1,8 @@
 import React from "react";
 import {Route, Routes} from 'react-router-dom'
-import Nav from "../pages/Nav";
-import { ProjectPage } from "../pages/ProjectPage";
-import { TodoPage } from "../pages/TodoPage";
-
+import Nav from "./pages/Nav";
+import { ProjectPage } from "./pages/ProjectPage";
+import { TodoPage } from "./pages/TodoPage";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
     </Routes>
     </>
   )
-    
 }
 
 export default App;
