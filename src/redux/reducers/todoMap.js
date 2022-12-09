@@ -1,6 +1,11 @@
 import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
 
-const defaultState = {};
+const defaultState = {
+  title: '',
+    text: '',
+    date: '',
+    priority: '',
+};
 
 const todoMap = (state = defaultState, action) => {
   switch (action.type) {

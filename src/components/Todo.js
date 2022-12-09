@@ -7,17 +7,31 @@ import { toggleTodo } from "../redux/actions";
 const Todo = ({ todo }) => {
   const dispatch = useDispatch();
   return (
-    <li className="todo-item" onClick={() => dispatch(toggleTodo(todo.id))}>
-      {todo && todo.completed ? "👌" : "👋"}{" "}
+    <div className="todo-item" onClick={() => dispatch(toggleTodo(todo.id))}>
+      {todo && todo.completed ? "✅" : "❗"}{" "}
+      <span>{todo.id}</span>
       <span
         className={cx(
           "todo-item__text",
           todo && todo.completed && "todo-item__text--completed"
         )}
       >
-        {todo.content}
+        {todo.content.title}
       </span>
-    </li>
+      <span>
+        {todo.content.text}
+      </span>
+      <span>
+        {todo.content.date}
+      </span>
+      <span>
+        {todo.content.priority}
+      </span>
+      <div>
+      {todo && todo.completed ? "Status: completed" : "Status: in Progress"}
+      </div>
+      <input type='text' placeholder="Add semi task...."></input>
+    </div>
   );
 };
 

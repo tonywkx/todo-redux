@@ -12,12 +12,13 @@ const TodoList = () => {
 
   return (
     <ul className="todo-list">
-      {todos && todos.length
+      {todos && todos.length 
         ? todos.map(todo => {
-            return <Todo key={`todo-${todo.id}`} todo={todo} />;
+            return <Todo key={todo.id} todo={todo} />;
           })
         : "No todos"}
     </ul>
+    
   );
 };
 
