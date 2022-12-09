@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/actions";
@@ -16,7 +15,6 @@ const AddTodo = ({actve, setActive}) => {
     files: null
   };
  
-  const [files, setFiles] = useState()
   const fileInput = useRef(null);
 
   const [fullTodo, setFullTodo] = useState(initialValues)
@@ -35,20 +33,20 @@ const AddTodo = ({actve, setActive}) => {
   
   const dispatch = useDispatch();
 
+  const getCreationTime = () =>{
+    let now = new Date().getTime()
+    fullTodo.creationDate = now
+  }
 
+  const handleInWorkTime = () => {
+    let now = new Date().getTime()
+    let time = fullTodo.creationDate - now;
+    fullTodo.inworkTime = time;
+  }
 
   const handleFileChange = ({target}) => {
     const fileNames  = Array.from(target.files).map(file => file.name)
-    
-    //const name = e.target.name 
-    //const value = e.target.value 
-    const { name, value } = target.target;
-
-    setFullTodo({
-      ...fullTodo,
-      [name]: value,
-    });
-   
+    fullTodo.files = fileNames
   }
 
   return (
@@ -69,6 +67,8 @@ const AddTodo = ({actve, setActive}) => {
 
 
       <button className="addtodo-button" type="submit" onClick={() => {
+        getCreationTime()
+        handleInWorkTime()
         dispatch(addTodo(fullTodo))
         
         setActive(false)

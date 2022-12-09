@@ -21,12 +21,21 @@ const Todo = ({ todo }) => {
       <span>
         {todo.content.text}
       </span>
+      <div>
+        {todo.content.creationDate}
+      </div>
+      <div>
+        {todo.content.inworkTime}
+      </div>
       <span>
         {todo.content.date}
       </span>
       <span>
         {todo.content.priority}
       </span>
+      <div>
+        {todo.content.files}
+      </div>
       <div>
       {todo && todo.completed ? "Status: completed" : "Status: in Progress"}
       </div>
